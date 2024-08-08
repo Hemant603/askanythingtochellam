@@ -10,9 +10,12 @@
 <body>
     <div class="search">
         <input id="textsearch" type="text" placeholder="search here..." onchange="handleInputChange(event)">
-        <button id="spkbtn" onclick="runSpeechRecog()"><img id="speaker" src="mics.jpg" alt=""></button>
+        <button id="spkbtn" onclick="runSpeechRecog()"><img id="speaker" src="mics.jpg" alt=""></button>   
+    </div>
+
+    <div id="srcbtn">
         <a id="dynamicLink">
-            <button type="button" onclick="search(document.getElementById('textsearch').value)">search</button>
+            <button class="spkbtn1" type="button" onclick="search(document.getElementById('textsearch').value)">search</button>
         </a>
     </div>
 
