@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+</head>
+<link rel="stylesheet" href="album.css">
+<script src="search.js"></script>
+<body>
+    <div class="search">
+        <input id="textsearch" type="text" placeholder="search here..." onchange="handleInputChange(event)">
+        <button id="spkbtn" onclick="runSpeechRecog()"><img id="speaker" src="mics.jpg" alt=""></button>
+        <a id="dynamicLink">
+            <button type="button" onclick="search(document.getElementById('textsearch').value)">search</button>
+        </a>
+    </div>
+
+    <div class="search">
+        <p id="text" onchange="show()"></p>
+    </div>
+</body>
+</html>
