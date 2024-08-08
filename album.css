@@ -8,38 +8,62 @@ html,body{
     width: 100%;
 }
 
+#chellamsirdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#chellamsir{
+    height: 180px;
+    width: 200px;
+    border-radius: 10px;
+}
+
 .search{
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
 
 #textsearch{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border-color: rgb(113, 122, 125);
+    padding: 2px 8px;
     height: 25px;
     width: 200px;
 }
 
 #spkbtn{
-    margin-left: 2px;
+    background-color: white;
+    margin-left: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    cursor: pointer;
 }
 
 #speaker{
-    height: 20px;
-    width: 15px;
+    height: 25px;
+    width: 20px;
+    border-radius: 10px;
 }
 
 #srcbtn{
-    margin-top: 5px;
+    background-color: white;
+    margin-top: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#spkbtn1{
+.spkbtn1{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;  
 }
