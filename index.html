@@ -8,14 +8,18 @@
 <link rel="stylesheet" href="album.css">
 <script src="search.js"></script>
 <body>
+    <div id="chellamsirdiv">
+        <img id="chellamsir" src="chellamSir.webp" alt="">
+    </div>
+
     <div class="search">
-        <input id="textsearch" type="text" placeholder="search here..." onchange="handleInputChange(event)">
+        <input id="textsearch" type="text" placeholder="  Ask here..." onchange="handleInputChange(event)">
         <button id="spkbtn" onclick="runSpeechRecog()"><img id="speaker" src="mics.jpg" alt=""></button>   
     </div>
 
     <div id="srcbtn">
         <a id="dynamicLink">
-            <button class="spkbtn1" type="button" onclick="search(document.getElementById('textsearch').value)">search</button>
+            <button class="spkbtn1" type="button" onclick="search(document.getElementById('textsearch').value)">Ask</button>
         </a>
     </div>
 
