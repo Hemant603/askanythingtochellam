@@ -14,7 +14,13 @@ html,body{
     justify-content: center;
 }
 
+#textsearch{
+    height: 25px;
+    width: 200px;
+}
+
 #spkbtn{
+    margin-left: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,4 +29,17 @@ html,body{
 #speaker{
     height: 20px;
     width: 15px;
+}
+
+#srcbtn{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#spkbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
