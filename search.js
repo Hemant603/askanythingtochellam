@@ -1,3 +1,4 @@
+
 const jsforce = require('jsforce');
 
 // Your Salesforce OAuth configuration
@@ -21,7 +22,10 @@ function handleOAuthCallback() {
                 console.error('Error during Salesforce authorization:', err);
                 return;
             }
-            console.log('Authenticated as: ' + userInfo.id);
+
+            // Log the access token and user info
+            console.log('Access Token:', conn.accessToken); // Log access token
+            console.log('Authenticated as:', userInfo.id); // Log user info
             // You can now use the connection to interact with Salesforce
         });
     } else {
