@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
 
     // ---------- Step 2: Create Account ----------
     const accountResponse = await axios.post(
-      `${instance_url}/services/data/v57.0/sobjects/Account`,
+      `${instance_url}/services/data/v57.0/sobjects/Contact`,
       {
         Name: name,
         Phone: phone,
@@ -46,7 +46,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: "Account created!",
+        message: "Contact created!",
         accountId: accountResponse.data.id,
       }),
     };
