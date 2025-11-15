@@ -64,7 +64,7 @@ document.getElementById('contactForm').addEventListener('submit', async (event) 
     };
 
     try {
-        const response = await fetch('/.netlify/functions/createContact', {
+        const response = await fetch('/netlify/functions/createContact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,4 +84,5 @@ document.getElementById('contactForm').addEventListener('submit', async (event) 
         alert('Failed to submit form. Please try again later.');
     }
 });
+
 
