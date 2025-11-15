@@ -59,33 +59,25 @@ document.getElementById('contactForm').addEventListener('submit', async (event) 
         FirstName: document.getElementById('firstname').value,
         LastName: document.getElementById('lastname').value,
         Email: document.getElementById('email').value,
-        Phone: document.getElementById('phone').value,
-        Description: document.getElementById('message').value,
+        Phone: document.getElementById('phone').value
     };
 
     try {
-        const response = await fetch('/netlify/functions/createContact.js', {
+        const response = await fetch('/.netlify/functions/createContact', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
         });
+
+        const result = await response.json();
 
         if (response.ok) {
             alert('Contact created successfully!');
-            event.target.reset();
         } else {
-            const errorData = await response.json();
-            alert('Error creating contact: ' + (errorData.message || 'Unknown error'));
+            alert('Error: ' + result.error);
         }
+
     } catch (error) {
-        console.error('Network error:', error);
-        alert('Failed to submit form. Please try again later.');
+        alert("Network error!");
     }
 });
-
-
-
-
-
