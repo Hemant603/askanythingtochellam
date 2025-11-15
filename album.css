@@ -6,44 +6,17 @@
 html,body{
     height: 100%;
     width: 100%;
-}
-
-/* style.css */
-body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-}
-
-input {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0%;
 }
 
 #chellamsirdiv{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 #chellamsir{
@@ -97,4 +70,46 @@ button:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;  
+}
+
+.formcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    text-align: center;
+    color: #333;
+}
+
+label{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+input, textarea, button{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#submitButton{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #45a049;
 }
