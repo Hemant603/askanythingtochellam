@@ -6,7 +6,6 @@
     <title>Chellam Sir Here...</title>
 </head>
 <link rel="stylesheet" href="album.css">
-<script src="search.js"></script>
 <body>
     <div id="chellamsirdiv">
         <img id="chellamsir" src="chellamSir.webp" alt="">
@@ -27,12 +26,27 @@
         <p id="text" onchange="show()"></p>
     </div>
 
-    <form id="contactForm">
-        <input type="text" id="contactName" placeholder="Contact Name" required>
-        <input type="email" id="contactEmail" placeholder="Email" required>
-        <input type="phone" id="contactPhone" placeholder="Phone" required>
-        <button type="submit">Create Contact</button>
-    </form>
+    <div class="form-container">
+        <form id="contactForm">
+            <h2>Contact Details Form</h2>
+            <label for="firstname">Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
 
+            <label for="lastname">Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button id="submitButton" type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="salesforcePush.js"></script>
 </body>
 </html>
