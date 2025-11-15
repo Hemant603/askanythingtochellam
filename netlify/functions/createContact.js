@@ -2,15 +2,16 @@ const axios = require("axios");
 
 exports.handler = async (event, context) => {
   try {
-    const { name, phone, website } = JSON.parse(event.body);
+    const data = JSON.parse(event.body);
 
-    // ---------- Salesforce Credentials ----------
-    const SF_LOGIN_URL =SF_LOGIN_URL;
-    const SF_USERNAME = SF_USERNAME;
-    const SF_PASSWORD = SF_PASSWORD;
-    const SF_TOKEN =SF_TOKEN;
+    const SF_LOGIN_URL = process.env.SF_LOGIN_URL;
+    const SF_USERNAME = process.env.SF_USERNAME;
+    const SF_PASSWORD = process.env.SF_PASSWORD;
+    const SF_TOKEN = process.env.SF_TOKEN;
+    const SF_CLIENT_ID = process.env.SF_CLIENT_ID;
+    const SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET;
 
-    // ---------- Step 1: Login to Salesforce ----------
+    // Login
     const loginResponse = await axios.post(
       `${SF_LOGIN_URL}/services/oauth2/token`,
       new URLSearchParams({
@@ -18,45 +19,42 @@ exports.handler = async (event, context) => {
         client_id: SF_CLIENT_ID,
         client_secret: SF_CLIENT_SECRET,
         username: SF_USERNAME,
-        password: SF_PASSWORD + SF_TOKEN,
+        password: SF_PASSWORD + SF_TOKEN
       }),
       {
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
       }
     );
 
     const { access_token, instance_url } = loginResponse.data;
 
-    // ---------- Step 2: Create Account ----------
-    const accountResponse = await axios.post(
+    // Create Contact
+    const contactResponse = await axios.post(
       `${instance_url}/services/data/v57.0/sobjects/Contact`,
-      {
-        Name: name,
-        Phone: phone,
-        Website: website,
-      },
+      data,
       {
         headers: {
           Authorization: `Bearer ${access_token}`,
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       }
     );
 
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: "Contact created!",
-        accountId: accountResponse.data.id,
-      }),
+        message: "Contact Created",
+        id: contactResponse.data.id
+      })
     };
+
   } catch (error) {
     return {
       statusCode: 500,
       body: JSON.stringify({
         error: error.message,
-        details: error.response?.data,
-      }),
+        details: error.response?.data
+      })
     };
   }
 };
